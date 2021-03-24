@@ -1,0 +1,46 @@
+PROCEDURE dot_product(var A : ARRAY_OF INTEGER , var B : ARRAY_OF INTEGER)
+VAR
+    i , ps :INTEGER.
+BEGIN
+    ps := 0;
+    FOR i FROM 0 TO 1  DO
+        ps := ps + (A[i]*B[i]);
+        
+    END_FOR
+    Write("product of 2 array =", ps)
+    IF (ps = 0 ) THEN
+        Write("orthogonal vectors");
+    ELSE
+        Write("not orthogonal vectors");
+    END_IF
+END
+
+FUNCTION dot_product(var A : ARRAY_OF INTEGER , var B : ARRAY_OF INTEGER) : INTEGER
+VAR
+    i,j, ps :INTEGER.
+BEGIN
+    ps := 0;
+    FOR i FROM 0 TO 1  DO
+        
+        ps := ps + (A[i]*B[j]);
+        
+    END_FOR
+    RETURN ps ;
+END
+
+ALGORITHM orthogonal_scalar
+VAR
+        A : ARRAY_OF INTEGER[2];
+        B : ARRAY_OF INTEGER[2];
+        ps : INTEGER;
+
+BEGIN
+
+    ps :=0 ;
+    ps := dot_product(A,B);
+    IF (ps = 0 ) THEN
+        Write("orthogonal vectors");
+    ELSE
+        Write("not orthogonal vectors");
+    END_IF
+END
